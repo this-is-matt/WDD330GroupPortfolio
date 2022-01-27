@@ -1,0 +1,75 @@
+/*Importing a font*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+/*Defining a variable to use for each cell (heigth and width)*/
+:root {
+    --cell-size: 100px;
+}
+
+body {
+    display: flex;
+    justify-content: space-evenly; /*With this we separate our board and our button*/
+    flex-direction: column; /*We change the direction, with this the button will be below the board*/
+    
+    /*We make the body have a width and height that occupy the entire screen.*/
+    height: 100vh;
+    width: 100vw;
+}
+
+.board {
+    /*We set the size of the nine cell container using the variable we created at the beginning.*/
+    width: var(--cell-size) * 3;
+    height: var(--cell-size) * 3;
+    /*We make the board organized in three columns, the cells will adjust to this 
+    automatically so it will not be necessary to set the template for the rows.*/
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+}
+
+.cell  {
+    /*We set the size of the cells using the variable.*/
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border: 1px solid black;
+    /*We apply styles to the interior of the cells. 
+    We center, change the font of the x's and o's and increase the size.*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    font-family: Roboto;
+}
+
+.buttonContainer {
+    /*We center the button*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.resetButton {
+    /*We increase the size and add a border.*/
+    font-size: 30px;
+    border: 1px solid black;
+}
+
+
+/*With this we access at each one of the board childs (cells) and take away the borders we don't want*/
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3) {
+    border-top: none;
+}
+.cell:nth-child(3n + 1) {
+    border-left: none;
+}
+.cell:nth-child(3n + 3) {
+    border-right: none;
+}
+.cell:last-child,
+.cell:nth-child(8),
+.cell:nth-child(7) {
+    border-bottom: none;
+}
+
