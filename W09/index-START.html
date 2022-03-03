@@ -71,9 +71,9 @@
       audio.play();
       key.classList.add('playing');
         
-          
+         
     };
-      
+    window.addEventListener('keydown', btnMove);  
     const keys = document.querySelectorAll('.key');
     keys.forEach(key => key.addEventListener('transitionend', removeTransition))
 
@@ -82,12 +82,12 @@
       this.classList.remove('playing');
     }
     
- //   function btnMove(){
-//        const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
-//        key.setAttribute("position", "relative"); 
-//        key.setAttribute("top", "10px");
+    function btnMove(e){
+        const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+        key.setAttribute("position", "absolute"); 
+        key.setAttribute("margin-top", "10px");
         
- //   }  
+    }  
   </script>
 
 
