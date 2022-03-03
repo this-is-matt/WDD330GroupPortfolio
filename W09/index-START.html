@@ -70,8 +70,10 @@
       audio.currentTime = 0;
       audio.play();
       key.classList.add('playing');
+        
+          
     };
-
+      
     const keys = document.querySelectorAll('.key');
     keys.forEach(key => key.addEventListener('transitionend', removeTransition))
 
@@ -79,6 +81,13 @@
       if (e.propertyName !== 'transform') return;
       this.classList.remove('playing');
     }
+    
+ //   function btnMove(){
+//        const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+//        key.setAttribute("position", "relative"); 
+//        key.setAttribute("top", "10px");
+        
+ //   }  
   </script>
 
 
